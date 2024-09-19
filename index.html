@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #333;
+    }
+    canvas {
+      border: 2px solid #fff;
+    }
+    #playAgain {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #fff;
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    #controls {
+      display: grid;
+      grid-template-areas: 
+        " .  up  . "
+        "left  .  right"
+        " . down . ";
+      gap: 5px;
+      margin-top: 20px;
+    }
+    .control-btn {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      background-color: #fff;
+      border: 2px solid #000;
+      border-radius: 50%; /* Make buttons circular */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    #upBtn {
+      grid-area: up;
+    }
+    #downBtn {
+      grid-area: down;
+    }
+    #leftBtn {
+      grid-area: left;
+    }
+    #rightBtn {
+      grid-area: right;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <button id="playAgain">Play Again</button>
+
+  <!-- Circular On-screen Controls in Cross Layout -->
+  <div id="controls">
+    <div class="control-btn" id="upBtn">⬆️</div>
+    <div class="control-btn" id="leftBtn">⬅️</div>
+    <div class="control-btn" id="downBtn">⬇️</div>
+    <div class="control-btn" id="rightBtn">➡️</div>
+  </div>
+
+  <script src="snake.js"></script>
+</body>
+</html>
